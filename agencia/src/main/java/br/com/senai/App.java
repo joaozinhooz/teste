@@ -23,7 +23,7 @@ public class App
         endereco.estado = Estado.PI;
 
         Candidato joaoguilherme = new Candidato();
-        joaoguilherme.nomeCompleto = "joaoguilherme Carvalho da Silva";
+        joaoguilherme.nomeCompleto = "João Guilherme da Silva Magalhães";
         joaoguilherme.dataNascimento = LocalDate.of(2000, 10, 16);
         joaoguilherme.email = "joaoguilherme@gmail.com";
         joaoguilherme.genero = Genero.F;
@@ -39,9 +39,14 @@ public class App
 
         Escolaridade e2 = new Escolaridade();
         e2.nomeCurso = "Engenharia Civil";
-        e2.nomeInstituicao = "IFPI - Inst. Federal do Piauí";
+        e2.nomeInstituicao = "Sesi - Escola Conselheiro Saraiva";
         e2.dataInicio = LocalDate.of(2020, 02, 01);
         e2.dataFim = LocalDate.of(2023, 06, 10);
+
+        Candidato aysha = new Candidato();
+        aysha.nomeCompleto = "Aysha Cristina Ramos Lima";
+        aysha.dataNascimento = LocalDate.of(2007, 02, 04);
+        aysha.email = "ayshazinha123@gmail.com";
 
         // List<Escolaridade> list = new ArrayList<>();
         // list.add(e1);
@@ -50,13 +55,19 @@ public class App
         joaoguilherme.escolaridades = Arrays.asList(e1,e2);
 
         System.out.println("Nome Completo "+joaoguilherme.nomeCompleto);
-        System.out.println("Idade: "+ Period.between(joaoguilherme.dataNascimento, 
-            LocalDate.now()).getYears());
+        System.out.println("Idade: "+ Period.between(joaoguilherme.dataNascimento, LocalDate.now()).getYears());
         System.out.println("Endereço:" + joaoguilherme.endereco.logradouro);
 
         for (Escolaridade escolaridade : joaoguilherme.escolaridades) {
             System.out.println(escolaridade.nomeCurso+" - "+escolaridade.nomeInstituicao);
-        }
+        
+        System.out.println("Nome Completo "+joaoguilherme.nomeCompleto);
+        System.out.println("Maior de idade: "+ (joaoguilherme.eMaioridade()));
+
+        System.out.println("***************************");
+        System.out.println("Nome Completo "+aysha.nomeCompleto);
+        System.out.println("Maior de idade: "+ (aysha.eMaioridade()));
 
     }
+}
 }
